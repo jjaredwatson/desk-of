@@ -7,11 +7,17 @@
 	<title>TreasureGram</title>
   </head>
   <body>
-    <h1>TreasureGram</h1>
+    <a href="/"><h1>TreasureGram</h1></a>
     <hr />
     {% for treasure in treasures %}
-      <p>Name: {{ treasure.name }}</p>
-      <p>Value: {{ treasure.value}}</p>
+      <a href="/{{treasure.id}}">
+        <p>Name: {{ treasure.name }}</p>
+      {% if treasure.value > 0 %}
+        <p>Value: {{ treasure.value}}</p>
+      {% else %}
+        <p>Value: Unknown</p>
+      {% endif%}
+      </a>
       <hr />
     {% endfor %}
     <footer>All Rights Reserved, TreasureGram 2017</footer>
