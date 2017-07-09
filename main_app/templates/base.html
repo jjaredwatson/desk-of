@@ -1,0 +1,17 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+	<title>TreasureGram</title>
+  </head>
+  <body>
+    <a href="/"><h1>TreasureGram</h1></a>
+    <hr />
+	{% block content %}
+	{% endblock %}
+
+    <footer>All Rights Reserved, TreasureGram 2017</footer>
+  </body>
+  </html>
