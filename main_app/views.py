@@ -1,20 +1,20 @@
 from django.shortcuts import render
-from .models import Treasure
+from .models import Drink
 from django.http import HttpResponse, HttpResponseRedirect
-from .forms import TreasureForm
+from .forms import DrinkForm
 
 def index(request):
-    treasures = Treasure.objects.all()
-    form = TreasureForm()
-    return render(request, 'index.html', {'treasures':treasures, 'form':form})
+    drinks = Drink.objects.all()
+    form = DrinkForm()
+    return render(request, 'drink-index.html', {'drinks':drinks, 'form':form})
 
-def show(request, treasure_id):
-	treasure = Treasure.objects.get(id=treasure_id)
-	return render(request, 'show.html', {'treasure': treasure})
+def show(request, drink_id):
+	drink = Drink.objects.get(id=drink_id)
+	return render(request, 'drink-show.html', {'drink': drink})
 
-def post_treasure(request):
-    form = TreasureForm(request.POST)
+def post_drink(request):
+    form = DrinkForm(request.POST)
     if form.is_valid():
-        treasure = form.save(commit = True)
-        treasure.save()
+        drink = form.save(commit = True)
+        drink.save()
     return HttpResponseRedirect('/')

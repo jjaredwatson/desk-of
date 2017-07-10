@@ -3,14 +3,12 @@
 
 {% block content %}
 
-    {% for treasure in treasures %}
-      <a href="/{{treasure.id}}">
-        <p>Name: {{ treasure.name }}</p>
-      {% if treasure.value > 0 %}
-        <p>Value: {{ treasure.value}}</p>
-      {% else %}
-        <p>Value: Unknown</p>
-      {% endif%}
+    <h2>What's in your cup?</h2>
+
+    {% for drink in drinks %}
+      <a href="/{{drink.id}}">
+        <p>Current Drink: {{ drink.name }}</p>
+        <p>Recipe: {{ drink.recipe }}</p>
       </a>
       <hr />
     {% endfor %}
