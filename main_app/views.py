@@ -31,7 +31,7 @@ def index_journal(request):
 
 def show_journal(request, journal_id):
 	journal = Journal.objects.get(id=journal_id)
-	return render(request, 'journal-show.html', {'drink': drink})
+	return render(request, 'journal-show.html', {'journal': journal})
 
 def post_journal(request):
     form = JournalForm(request.POST)
