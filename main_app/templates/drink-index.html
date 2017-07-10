@@ -10,7 +10,7 @@
         <p>Current Drink: {{ drink.name }}</p>
         <p>Recipe: {{ drink.recipe }}</p>
       </a>
-      <hr />
+
     {% endfor %}
     <form action="post_url/" method="post">
       {% csrf_token %}
