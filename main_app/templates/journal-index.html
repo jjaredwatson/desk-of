@@ -6,7 +6,7 @@
     <h2>What's on your mind?</h2>
 
     {% for journal in journals %}
-      <a href="/{{journal.id}}">
+      <a href="/journal/{{journal.id}}">
         <p>Title: {{ journal.title }}</p>
         <p>Entry: {{ journal.entry }}</p>
       </a>
