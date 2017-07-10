@@ -2,15 +2,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}" />
+
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
 	<title>DeskOf</title>
   </head>
   <body>
-    <a href="/"><h1>TreasureGram</h1></a>
-    <hr />
+    <a href="/"><h1>Welcome to the Desk Of...</h1></a>
+
 	{% block content %}
 	{% endblock %}
 
-    <footer>All Rights Reserved, TreasureGram 2017</footer>
+    <footer>© DeskOf 2017 | <a href="https://github.com/jjaredwatson/desk-of">See the project on GitHub</a></footer>
   </body>
   </html>

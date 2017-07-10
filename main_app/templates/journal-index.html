@@ -3,14 +3,14 @@
 
 {% block content %}
 
-    <h2>What's in your cup?</h2>
+    <h2>What's on your mind?</h2>
 
-    {% for drink in drinks %}
-      <a href="/{{drink.id}}">
-        <p>Current Drink: {{ drink.name }}</p>
-        <p>Recipe: {{ drink.recipe }}</p>
+    {% for journal in journals %}
+      <a href="/{{journal.id}}">
+        <p>Title: {{ journal.title }}</p>
+        <p>Entry: {{ journal.entry }}</p>
       </a>
-
+      <hr />
     {% endfor %}
     <form action="post_url/" method="post">
       {% csrf_token %}

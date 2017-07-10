@@ -1,7 +1,22 @@
-h1 {
-	color: blue;
+* {
+	font-family: avenir;
+}
+html {
+  background: url(images/profile-desk.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 body {
-	background-color: green;
+	background-color: initial;
+}
+
+#coffee-cup {
+	width: 11vw;
+}
+
+#journal {
+	width: 14vw;
 }
