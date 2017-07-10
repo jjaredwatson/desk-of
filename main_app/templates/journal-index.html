@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <h2>What's on your mind?</h2>
+
+    {% for journal in journals %}
+      <a href="/{{journal.id}}">
+        <p>Title: {{ journal.title }}</p>
+        <p>Entry: {{ journal.entry }}</p>
+      </a>
+      <hr />
+    {% endfor %}
+    <form action="post_url/" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Submit" />
+    </form>
+
+
+{% endblock %}
