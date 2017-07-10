@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Drink
-from .forms import DrinkForm
+from .forms import DrinkForm, JournalForm
 from .models import Journal
-from .forms import JournalForm
+
 
 def desk(request):
     return render(request, 'desk.html')
@@ -23,6 +23,8 @@ def post_drink(request):
         drink = form.save(commit = True)
         drink.save()
     return HttpResponseRedirect('/drinks')
+
+
 
 def index_journal(request):
     journals = Journal.objects.all()
