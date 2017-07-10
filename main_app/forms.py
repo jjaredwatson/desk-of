@@ -1,7 +1,7 @@
 from django import forms
-from .models import Treasure
+from .models import Drink
 
-class TreasureForm(forms.ModelForm):
+class DrinkForm(forms.ModelForm):
     class Meta:
-        model = Treasure
-        fields = ['name', 'value', 'location', 'material']
+        model = Drink
+        fields = ['name', 'recipe']
