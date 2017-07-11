@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Drink
-from .forms import DrinkForm, JournalForm
-from .models import Journal
+from .models import Drink, Journal, Ipod
+from .forms import DrinkForm, JournalForm, IpodForm
+
 
 
 def desk(request):
@@ -24,8 +24,6 @@ def post_drink(request):
         drink.save()
     return HttpResponseRedirect('/drinks')
 
-
-
 def index_journal(request):
     journals = Journal.objects.all()
     form = JournalForm()
@@ -41,3 +39,19 @@ def post_journal(request):
         journal = form.save(commit = True)
         journal.save()
     return HttpResponseRedirect('/journal')
+
+def index_ipod(request):
+    ipods = Ipod.objects.all()
+    form = IpodForm()
+    return render(request, 'ipod-index.html', {'ipods':ipods, 'form':form})
+
+def show_ipod(request, ipod_id):
+	ipod = Ipod.objects.get(id=ipod_id)
+	return render(request, 'ipod-show.html', {'ipod': ipod})
+
+def post_ipod(request):
+    form = IpodForm(request.POST)
+    if form.is_valid():
+        ipod = form.save(commit = True)
+        ipod.save()
+    return HttpResponseRedirect('/ipod')

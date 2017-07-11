@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <h2>What's playing at your desk?</h2>
+
+    {% for ipod in ipods %}
+
+      <a href="/ipod/{{ipod.id}}">
+        <p>Album: {{ ipod.album }}</p>
+        <p>Artist: {{ ipod.artist }}</p>
+        <p>Favorite Track: {{ ipod.track }}</p>
+      </a>
+
+    {% endfor %}
+
+    <form action="post_url/" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Submit" />
+    </form>
+
+
+{% endblock %}
