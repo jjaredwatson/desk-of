@@ -10,7 +10,8 @@
         <p>Current Drink: {{ drink.name }}</p>
         <p>Recipe: {{ drink.recipe }}</p>
       </a>
-      <button href="/drinks/delete/{{drink.id}}" type="button" name="button">Delete</button>
+      <button> <a href="{% url 'edit_drink' drink.id %}" type="button" name="button">Edit</button>
+      <button><a href="{% url 'delete_drink' drink.id %}" type="button" name="button">Delete</button>
 
     {% endfor %}
     <form action="post_url/" method="post">

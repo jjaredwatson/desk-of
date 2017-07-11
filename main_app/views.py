@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Drink, Journal, Ipod
 from .forms import DrinkForm, JournalForm, IpodForm
@@ -23,6 +23,19 @@ def post_drink(request):
         drink = form.save(commit = True)
         drink.save()
     return HttpResponseRedirect('/drinks')
+
+def update_drink(request, pk, template_name='edit.html'):
+    drink = get_object_or_404(Drink, pk=pk)
+    form = DrinkForm(request.POST or None, instance=drink)
+    if form.is_valid():
+        form.save()
+        return redirect('/drinks')
+    return render(request, template_name, {'form':form})
+
+def delete_drink(request, pk):
+    drink = get_object_or_404(Drink, pk=pk)
+    drink.delete()
+    return redirect('/drinks')
 
 def index_journal(request):
     journals = Journal.objects.all()
