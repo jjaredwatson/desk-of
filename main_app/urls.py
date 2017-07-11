@@ -8,5 +8,8 @@ urlpatterns = [
     url(r'^drinks/post_url/$', views.post_drink, name="post_drink"),
     url(r'^journal/$', views.index_journal),
     url(r'^journal/([0-9]+)/$', views.show_journal, name = 'show_journal'),
-    url(r'^journal/post_url/$', views.post_journal, name="post_journal")
+    url(r'^journal/post_url/$', views.post_journal, name="post_journal"),
+    url(r'^ipod/$', views.index_ipod),
+    url(r'^ipod/([0-9]+)/$', views.show_ipod, name = 'show_ipod'),
+    url(r'^ipod/post_url/$', views.post_ipod, name="post_ipod")
 ]
