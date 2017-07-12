@@ -6,4 +6,9 @@
     <h2> Name: {{ drink.name}}</h1>
     <p> Recipe: {{ drink.recipe }}</p>
 
+    <button><a href="{% url 'edit_drink' drink.id %}" type="button" name="button">Edit</a></button>
+    <button><a href="{% url 'delete_drink' drink.id %}" type="button" name="button" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a></button>
+    <button type="button" name="button"><a href="/drinks">Back</a></button>
+
+
 {% endblock %}

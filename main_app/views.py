@@ -53,6 +53,12 @@ def post_journal(request):
         journal.save()
     return HttpResponseRedirect('/journal')
 
+
+def delete_journal(request, pk):
+    journal = get_object_or_404(Journal, pk=pk)
+    journal.delete()
+    return redirect('/journal')
+
 def index_ipod(request):
     ipods = Ipod.objects.all()
     form = IpodForm()
@@ -68,3 +74,9 @@ def post_ipod(request):
         ipod = form.save(commit = True)
         ipod.save()
     return HttpResponseRedirect('/ipod')
+
+
+def delete_ipod(request, pk):
+    ipod = get_object_or_404(Ipod, pk=pk)
+    ipod.delete()
+    return redirect('/ipod')

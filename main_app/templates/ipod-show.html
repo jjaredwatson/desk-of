@@ -7,4 +7,6 @@
   <p>Artist: {{ ipod.artist }}</p>
   <p>Favorite Track: {{ ipod.track }}</p>
 
+  <button><a href="{% url 'delete_ipod' ipod.id %}" type="button" name="button">Delete</button>
+
 {% endblock %}

@@ -10,13 +10,29 @@
         <p>Title: {{ journal.title }}</p>
         <p>Entry: {{ journal.entry }}</p>
       </a>
-      <hr />
     {% endfor %}
-    <form action="post_url/" method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <input type="submit" value="Submit" />
-    </form>
+
+
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Add an Entry</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>What's on your mind?</h3>
+        <form action="post_url/" method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+
+    </div>
+
+    <button type="button" name="button"><a href="/">Back to Work</a></button>
 
 
 {% endblock %}

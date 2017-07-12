@@ -10,15 +10,28 @@
         <p>Current Drink: {{ drink.name }}</p>
         <p>Recipe: {{ drink.recipe }}</p>
       </a>
-      <button> <a href="{% url 'edit_drink' drink.id %}" type="button" name="button">Edit</button>
-      <button><a href="{% url 'delete_drink' drink.id %}" type="button" name="button">Delete</button>
-
     {% endfor %}
-    <form action="post_url/" method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <input type="submit" value="Submit" />
-    </form>
+    
+    <button type="button" name="button"><a href="/">Back to work</a></button>
+
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Add a drink</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>What's in your cup?</h3>
+        <form action="post_url/" method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+
+    </div>
 
 
 {% endblock %}
