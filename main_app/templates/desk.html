@@ -3,10 +3,14 @@
 
 {% block content %}
 
-    <a href="/drinks"><img id="coffee-cup" src="/static/images/coffee-cup.png" alt="coffee cup"></a>
-    <a href="/journal"><img id="journal" src="/static/images/journal.png" alt="journal"></a>
-    <br />
-  
-    <a href="/ipod"><img id="ipod" src="/static/images/ipod.png" alt="ipod"></a>
+  <div class="container">
+    <div class="row">
+      <div class="col-s4">
+        <a href="/journal"><img id="journal" src="/static/images/journal.png" alt="journal"></a>
+      </div>
+      <a href="/drinks"><img id="coffee-cup" src="/static/images/coffee-cup.png" alt="coffee cup"></a>
+      <a href="/ipod"><img id="ipod" src="/static/images/ipod.png" alt="ipod"></a>
+    </div>
+  </div>
 
 {% endblock %}
