@@ -7,10 +7,15 @@
 	<title>DeskOf</title>
   </head>
   <body>
-    <!-- <a href="/"><h1>Welcome to the Desk Of...</h1></a> -->
+    {% if user.is_authenticated %}
+      <a class="greeting" href="{% url 'profile' user.username %}"><h4>Welcome, {{ user.username }}</h4></a> <a class="greeting" href="#"><h4>|</h4></a>
+      <a class="greeting" href="{% url 'logout' %}"><h4>Logout</h4></a>
+    {% else %}
+      <a class="greeting" href="{% url 'login' %}"><h4>Login</h4></a>
+    {% endif %}
 
-	{% block content %}
-	{% endblock %}
+	  {% block content %}
+	  {% endblock %}
 
     <footer>© DeskOf 2017 | <a href="https://github.com/jjaredwatson/desk-of">See the project on GitHub</a></footer>
     <script src="{% static 'js/jquery.min.js' %}"></script>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div id="box">
+  <div id="content">
+
+    <h1>Welcome to the DeskOF...</h1>
+
+    <form method="POST" action=".">
+      {% csrf_token %}
+      {{ form.as_p}}
+      <input class="submit" type="submit" value="Login" />
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

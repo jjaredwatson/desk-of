@@ -15,6 +15,10 @@ a {
 	text-decoration: none;
 }
 
+.greeting {
+	color: white;
+}
+
 #coffee-cup {
 	width: 11vw;
 	transform: translate(65vw, 0vh);
