@@ -20,9 +20,9 @@ Desk Of is an interactive social website where users can design their desks and 
 
 2. In your terminal, run:
 
-  ```bash
-		git clone [insert or paste link]
-	```
+```bash
+git clone https://github.com/jjaredwatson/desk-of.git
+```
 
 3. Drill down into the project folder:
 
