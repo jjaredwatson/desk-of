@@ -17,11 +17,13 @@ a {
 
 .greeting {
 	color: white;
+	margin: 0;
+	display: inline-block;
 }
 
 #coffee-cup {
 	width: 11vw;
-	transform: translate(65vw, 0vh);
+	transform: translate(65vw, -12vh);
 }
 
 #journal {
@@ -31,7 +33,7 @@ a {
 
 #ipod {
 	width: 15vw;
-	transform: translate(50vw, 48vh);
+	transform: translate(50vw, 36vh);
 }
 
 
