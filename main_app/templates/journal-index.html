@@ -3,9 +3,14 @@
 
 {% block content %}
 
+<div id="box">
+
+  <div id="content">
+
     <h2>What's on your mind?</h2>
 
     {% for journal in journals %}
+    <hr />
       <a href="/journal/{{journal.id}}">
         <p>Title: {{ journal.title }}</p>
         <p>Entry: {{ journal.entry }}</p>
@@ -14,7 +19,12 @@
 
 
     <!-- Trigger/Open The Modal -->
+    <button type="button" name="button"><a href="/">Back to Work</a></button>
     <button id="myBtn">Add an Entry</button>
+
+
+  </div>
+</div>
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
@@ -32,7 +42,6 @@
 
     </div>
 
-    <button type="button" name="button"><a href="/">Back to Work</a></button>
 
 
 {% endblock %}

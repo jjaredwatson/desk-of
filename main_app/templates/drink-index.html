@@ -3,19 +3,29 @@
 
 {% block content %}
 
+<div id="box">
+
+  <div id="content">
+
     <h2>What's in your cup?</h2>
 
     {% for drink in drinks %}
+
+    <hr />
       <a href="/drinks/{{drink.id}}">
         <p>Current Drink: {{ drink.name }}</p>
         <p>Recipe: {{ drink.recipe }}</p>
       </a>
     {% endfor %}
-    
+
     <button type="button" name="button"><a href="/">Back to work</a></button>
 
     <!-- Trigger/Open The Modal -->
     <button id="myBtn">Add a drink</button>
+
+  </div>
+
+</div>
 
     <!-- The Modal -->
     <div id="myModal" class="modal">

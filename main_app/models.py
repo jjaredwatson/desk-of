@@ -7,7 +7,7 @@ class Drink(models.Model):
 
 class Journal(models.Model):
     title = models.CharField(max_length=100)
-    entry = models.CharField(max_length=500)
+    entry = models.CharField(max_length=1000)
 
 class Ipod(models.Model):
     album = models.CharField(max_length=100)

@@ -3,23 +3,33 @@
 
 {% block content %}
 
-    <h2>What's playing at your desk?</h2>
+  <div id="box">
 
-    {% for ipod in ipods %}
+    <div id="content">
 
-      <a href="/ipod/{{ipod.id}}">
-        <p>Album: {{ ipod.album }}</p>
-        <p>Artist: {{ ipod.artist }}</p>
-        <p>Favorite Track: {{ ipod.track }}</p>
-      </a>
+      <h2>What's playing at your desk?</h2>
 
-    {% endfor %}
+      {% for ipod in ipods %}
 
-    <button type="button" name="button"><a href="/">Back to Work</a></button>
+        <hr />
+        <a href="/ipod/{{ipod.id}}">
+          <p>Album: {{ ipod.album }}</p>
+          <p>Artist: {{ ipod.artist }}</p>
+          <p>Favorite Track: {{ ipod.track }}</p>
+        </a>
 
-    <!-- Trigger/Open The Modal -->
-    <button id="myBtn">Add Your Music</button>
 
+      {% endfor %}
+
+      <hr />
+      <button type="button" name="button"><a href="/">Back to Work</a></button>
+
+      <!-- Trigger/Open The Modal -->
+      <button id="myBtn">Add Your Music</button>
+
+    </div>
+
+  </div>
     <!-- The Modal -->
     <div id="myModal" class="modal">
 

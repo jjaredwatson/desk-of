@@ -1,6 +1,9 @@
 // Get the modal
 var modal = document.getElementById('myModal');
 
+// Get index box
+var box = document.getElementById('box');
+
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
 
@@ -21,5 +24,11 @@ span.onclick = function() {
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
+    }
+}
+
+window.onclick = function(event) {
+    if (event.target == box) {
+        window.location.href = "/";
     }
 }
