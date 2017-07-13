@@ -1,9 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Drink, Journal, Ipod
-from .forms import DrinkForm, JournalForm, IpodForm
+from .forms import DrinkForm, JournalForm, IpodForm, LoginForm
+from django.contrib.auth import authenticate, login, logout
 
 
+def profile(request, username):
+    user = User.objects.get(username=username)
+    return render(request, 'desk.html', {'username': username})
 
 def desk(request):
     return render(request, 'desk.html')
@@ -20,17 +24,10 @@ def show_drink(request, drink_id):
 def post_drink(request):
     form = DrinkForm(request.POST)
     if form.is_valid():
-        drink = form.save(commit = True)
+        drink = form.save(commit = False)
+        drink.user = request.user
         drink.save()
     return HttpResponseRedirect('/drinks')
-
-def update_drink(request, pk, template_name='edit.html'):
-    drink = get_object_or_404(Drink, pk=pk)
-    form = DrinkForm(request.POST or None, instance=drink)
-    if form.is_valid():
-        form.save()
-        return redirect('/drinks')
-    return render(request, template_name, {'form':form})
 
 def delete_drink(request, pk):
     drink = get_object_or_404(Drink, pk=pk)
@@ -49,10 +46,10 @@ def show_journal(request, journal_id):
 def post_journal(request):
     form = JournalForm(request.POST)
     if form.is_valid():
-        journal = form.save(commit = True)
+        journal = form.save(commit = False)
+        journal.user = request.user
         journal.save()
     return HttpResponseRedirect('/journal')
-
 
 def delete_journal(request, pk):
     journal = get_object_or_404(Journal, pk=pk)
@@ -71,12 +68,37 @@ def show_ipod(request, ipod_id):
 def post_ipod(request):
     form = IpodForm(request.POST)
     if form.is_valid():
-        ipod = form.save(commit = True)
+        ipod = form.save(commit = False)
+        ipod.user = request.user
         ipod.save()
     return HttpResponseRedirect('/ipod')
-
 
 def delete_ipod(request, pk):
     ipod = get_object_or_404(Ipod, pk=pk)
     ipod.delete()
     return redirect('/ipod')
+
+def login_view(request):
+    if request.method == 'POST':
+        # if post, then authenticate (user submitted username and password)
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            u = form.cleaned_data['username']
+            p = form.cleaned_data['password']
+            user = authenticate(username = u, password = p)
+            if user is not None:
+                if user. is_active:
+                    login(request, user)
+                    return HttpResponseRedirect('/')
+                else:
+                    print("The account has been disabled.")
+            else:
+                print("The username and/or password is incorrect.")
+                return HttpResponseRedirect('/login')
+    else:
+        form = LoginForm()
+        return render(request, 'landing.html', {'form': form})
+
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect('/login')
