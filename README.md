@@ -1,9 +1,9 @@
-#Welcome to the DeskOf...
+# Welcome to the DeskOf...
 
 Desk Of is an interactive social website where users can design their desks and view the desks of others, while hunting for hidden treasures and earning more junk to clutter their own desks.
 
 ---
-###Technologies Used
+### Technologies Used
 
 * **Django**
 * **Python**
@@ -14,25 +14,25 @@ Desk Of is an interactive social website where users can design their desks and 
 
 ---
 
-###How to install DeskOf
+### How to install DeskOf
 
 1. Fork and clone repo.
 
 2. In your terminal, run:
 
-```bash
+  ```bash
 		git clone [insert or paste link]
 	```
 
 3. Drill down into the project folder:
 
-```bash
+  ```bash
 		cd desk-of
 	```
 
 4. Start up your local server to see the webpage:
 
-```bash
+  ```bash
 		python manage.py runserver
 	```
 
@@ -40,11 +40,11 @@ Desk Of is an interactive social website where users can design their desks and 
 
 ---
 
-##Planning
+## Planning
 
 ---
 
-###User Stories
+### User Stories
 
 * User could be anyone as the app will be highly personalized.
 
@@ -60,7 +60,7 @@ Desk Of is an interactive social website where users can design their desks and 
 
 ---
 
-###Wireframes
+### Wireframes
 
 Created wireframes in Sketch.
 
