@@ -26,15 +26,15 @@ git clone https://github.com/jjaredwatson/desk-of.git
 
 3. Drill down into the project folder:
 
-  ```bash
-		cd desk-of
-	```
+```bash
+cd desk-of
+```
 
 4. Start up your local server to see the webpage:
 
-  ```bash
-		python manage.py runserver
-	```
+```bash
+python manage.py runserver
+```
 
   Head to the address given in your terminal and you should see the application!
 
