@@ -3,7 +3,7 @@
 Desk Of is an interactive social website where users can design their desks and view the desks of others, while hunting for hidden treasures and earning more junk to clutter their own desks.
 
 ---
-### Technologies Used
+## Technologies Used
 
 * **Django**
 * **Python**
@@ -14,7 +14,7 @@ Desk Of is an interactive social website where users can design their desks and 
 
 ---
 
-### How to install DeskOf
+## How to install DeskOf
 
 1. Fork and clone repo.
 
@@ -40,11 +40,11 @@ python manage.py runserver
 
 ---
 
-## Planning
+# Planning
 
 ---
 
-### User Stories
+## User Stories
 
 * User could be anyone as the app will be highly personalized.
 
@@ -60,8 +60,47 @@ python manage.py runserver
 
 ---
 
-### Wireframes
+## Wireframes
 
 Created wireframes in Sketch.
 
+##### Landing Page
+
 ![](main_app/static/images/landing.png)
+
+##### Profile/Main Page
+
+![](main_app/static/images/home.png)
+
+##### Show/Index Page
+
+![](main_app/static/images/showpg.png)
+
+##### Entry Form
+
+![](main_app/static/images/form.png)
+
+---
+
+## Entity Relationship Diagram
+
+![](main_app/static/images/erd.png)
+
+---
+
+## Unresolved Problems
+
+* Edit Functionality
+* Create Account For New User
+
+---
+
+## Future Features
+
+* Ability to customize objects on desk
+* A doodle pad
+* Post-It notes that users can write or draw on and leave on other users' desks
+* The ipod to link up to Spotify to show user's currently playing music
+* CSS animation
+* Moveable Items
+* More items to junk up the desk
