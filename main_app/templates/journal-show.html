@@ -3,11 +3,16 @@
 
 {% block content %}
 
-    <h2> Title: {{ journal.title }}</h1>
-    <p> Entry: {{ journal.entry }}</p>
+<div id="box">
+  <div id="content">
 
-    <button><a href="{% url 'delete_journal' journal.id %}" type="button" name="button" onclick="return confirm('Are you sure you want to delete this item?');">Delete</button>
-    <button type="button" name="button"><a href="/journal">Back</a></button>
+    <h2>{{ journal.title }}</h1>
+    <p>{{ journal.entry }}</p>
 
+    <button class="work" type="button" name="button"><a href="/journal">Back</a></button>
+    <button class="delete"><a href="{% url 'delete_journal' journal.id %}" type="button" name="button" onclick="return confirm('Are you sure you want to delete this item?');">Delete</button>
+
+  </div>
+</div>
 
 {% endblock %}

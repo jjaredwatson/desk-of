@@ -3,18 +3,28 @@
 
 {% block content %}
 
+<div id="box">
+
+  <div id="content">
+
     <h2>What's on your mind?</h2>
 
     {% for journal in journals %}
+    <hr />
       <a href="/journal/{{journal.id}}">
-        <p>Title: {{ journal.title }}</p>
+        <h5>{{ journal.title }}</h5>
         <p>Entry: {{ journal.entry }}</p>
       </a>
     {% endfor %}
 
 
-    <!-- Trigger/Open The Modal -->
+    <hr />
+    <button class="work" type="button" name="button"><a href="/">Back to Work</a></button>
     <button id="myBtn">Add an Entry</button>
+
+
+  </div>
+</div>
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
@@ -26,13 +36,12 @@
         <form action="post_url/" method="post">
           {% csrf_token %}
           {{ form.as_p }}
-          <input type="submit" value="Submit" />
+          <input class="submit" type="submit" value="Submit" />
         </form>
       </div>
 
     </div>
 
-    <button type="button" name="button"><a href="/">Back to Work</a></button>
 
 
 {% endblock %}

@@ -3,11 +3,17 @@
 
 {% block content %}
 
-  <p>Album: {{ ipod.album }}</p>
-  <p>Artist: {{ ipod.artist }}</p>
-  <p>Favorite Track: {{ ipod.track }}</p>
+<div id="box">
+  <div id="content">
 
-  <button><a href="{% url 'delete_ipod' ipod.id %}" type="button" name="button">Delete</button>
-  <button type="button" name="button"><a href="/ipod">Back</a></button>
+    <p>Album: {{ ipod.album }}</p>
+    <p>Artist: {{ ipod.artist }}</p>
+    <p>Favorite Track: {{ ipod.track }}</p>
+
+    <button class="work" type="button" name="button"><a href="/ipod">Back</a></button>
+    <button class="delete"><a href="{% url 'delete_ipod' ipod.id %}" type="button" name="button" onclick="return confirm('Are you sure you want to delete this item?');">Delete</button>
+
+  </div>
+</div>
 
 {% endblock %}

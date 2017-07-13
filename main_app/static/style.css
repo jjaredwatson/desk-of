@@ -1,6 +1,7 @@
 * {
 	font-family: avenir;
 }
+
 html {
   background: url(images/profile-desk.png) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -9,21 +10,24 @@ html {
   background-size: cover;
 }
 
-body {
-	background-color: initial;
+a {
+	color: inherit;
+	text-decoration: none;
 }
-
 
 #coffee-cup {
 	width: 11vw;
+	transform: translate(65vw, 0vh);
 }
 
 #journal {
-	width: 14vw;
+	width: 16vw;
+	transform: translate(3vw, 11vh);
 }
 
 #ipod {
 	width: 15vw;
+	transform: translate(50vw, 48vh);
 }
 
 
@@ -37,7 +41,7 @@ body {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgba(0,0,0,1); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
@@ -65,9 +69,66 @@ body {
 }
 
 footer {
+	color: white;
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
+  padding: 1rem, 1rem, 0rem, 1rem;
+	margin-left: 1vw;
+	margin-bottom: .2rem;
+}
+
+#box {
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 40px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+h2 {
+	margin-top: 20px;
+	margin-bottom: 60px;
+	text-align: center;
+}
+
+.work {
+	background: black;
+	color: white;
+	padding: 10px;
+	border: none;
+}
+
+#myBtn {
+	background: #038EC4;
+	color: white;
+	padding: 10px;
+	border: none;
+}
+
+.submit {
+	background: #03C428;
+	color: white;
+	padding: 10px;
+	border: none;
+}
+
+.delete {
+	background: #FF0202;
+	color: white;
+	padding: 10px;
+	border: none;
 }
